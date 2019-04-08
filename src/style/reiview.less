@@ -1,0 +1,92 @@
+//iviewUI重写
+@import '~iview/src/styles/index.less';
+@import './config.less';
+
+//自定义主题色
+
+// 配置主题色,相关样式配置参数https://github.com/iview/iview/blob/2.0/src/styles/custom.less
+
+/* ----------按钮--------------- */
+.ivu-btn-primary,.ivu-btn-primary:hover{
+	background: #093151;
+	border-color:#093151;
+	color: #ffffff;
+}
+.ivu-btn-ghost,.ivu-btn-ghost:hover{
+	background: #093151;
+	border-color:#093151;
+	color: #ffffff;
+}
+.ivu-btn-info,.ivu-btn-info:hover{
+	background: #2F97B1;
+	border-color: #2F97B1;
+	color: #ffffff;
+}
+
+/* ----------分页--------------- */
+.ivu-page-item-active,.ivu-page-item-active:hover {
+    background-color: #093151;
+    border-color: #093151;
+}
+
+/* ----------复选框--------------- */
+// .ivu-radio-inner:after {
+//     border-color: #093151;
+//     background-color: #093151;
+// }
+/* ----------复选框--------------- */
+.ivu-checkbox-checked .ivu-checkbox-inner {
+    border-color: #093151;
+    background-color: #093151;
+}
+
+/* ----------菜单--------------- */
+.ivu-menu-dark {
+	color: #ffffff;
+    background: #093151;
+}
+.ivu-menu-item,.ivu-menu-item:hover {
+	color: #ffffff;
+	background: #093151;
+}
+.ivu-menu-submenu,.ivu-menu-submenu:hover {
+	color: #ffffff;
+    background: #093151;
+}
+.ivu-menu-submenu-title,.ivu-menu-submenu-title:hover {
+	color: #ffffff;
+    background: #093151;
+}
+.ivu-menu-item-active,.ivu-menu-item-active:hover {
+	color: #ffffff;
+	background: #093151;
+}
+.ivu-menu-item-selected,.ivu-menu-item-selected:hover {
+	color: #ffffff;
+	background: #093151;
+}
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-opened .ivu-menu-submenu-title{
+	background: #093151;
+}
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu), .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title-active:not(.ivu-menu-submenu), .ivu-menu-dark.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):hover, .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title-active:not(.ivu-menu-submenu):hover {
+    color: #ffffff;
+    background: #082C49;
+    border-right: 2px solid #082C49;
+}
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item-active, .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item-active:hover{
+    color: #ffffff;
+    background: #082C49 !important;
+}
+/* ----------面板--------------- */
+.ivu-tabs {
+	height: 100%;
+}
+
+/* ----------输入框--------------- */
+.ivu-input-group-prepend {
+    width: 65px;
+    background: #ffffff;
+}
+.ivu-input-group-append {
+    background: #ffffff;
+}
