@@ -229,11 +229,11 @@
   .podium{
     margin: 20px 0px 10px 0px;
     height: 28px;
-    background: url('../../assets/home.png') no-repeat;
+    background: url('/static/home.png') no-repeat;
   }
   .briefcase{
      margin: 20px 0px 10px 0px;
     height: 28px;
-    background: url('../../assets/home.png') no-repeat;
+    background: url('/static/home.png') no-repeat;
   }
 </style>

@@ -1,6 +1,6 @@
 // 配置select列表,将会生成对应的过滤器name + Filter
 
-/* --------------账号管理 ----------------- */
+/* --------------账号管理 交易管理 ----------------- */
 // 状态
 export const userStatus = [
   { value: '0', label: '全部' },
@@ -25,6 +25,54 @@ export const userLevelModal2 = [
 
     { value: '2', label: '二级' },
   ]
+export const dataSource = [
+    { value: '0', label: '全部' },
+    { value: '1', label: 'APP' },
+    { value: '2', label: '公众号' },
+  ]
+export const tradeStatu = [
+  { value: '0', label: '全部' },
+  { value: '1', label: '待审核' },
+  { value: '2', label: '审核成功' },
+  { value: '3', label: '审核失败' },
+  { value: '4', label: '提现成功' },
+  { value: '5', label: '提现失败' },
+]
+export const packetType = [
+  { value: '0', label: '全部' },
+  { value: '1', label: '微信' },
+  { value: '2', label: '支付宝' },
+]
+export const auditStatus = [
+  { value: '', label: '全部' },
+  { value: '1', label: '未审核' },
+  { value: '0', label: '审核通过' },
+  { value: '3', label: '审核失败' },
+]
+export const PreferentialStatus = [
+  { value: '0', label: '全部' },
+  { value: '1', label: '关闭' },
+  { value: '2', label: '开启' },
+]
+export const BusinessStatus = [
+  { value: '', label: '全部' },
+  { value: '0', label: '营业' },
+  { value: '1', label: '歇业' },
+]
+export const combinationStatus = [
+  { value: '', label: '全部' },
+  { value: '0', label: '利众生活技术部' },
+  { value: '1', label: '利众生活客服部' },
+  { value: '2', label: '利众生活市场部' },
+]
+export const roleStatus = [
+  { value: '', label: '全部' },
+  { value: '0', label: '客服' },
+  { value: '1', label: '开发' },
+  { value: '2', label: '地推' },
+  { value: '3', label: '管理' },
+  { value: '4', label: '董事长' },
+]
   /* --------------财务管理 ----------------- */
   // 分润来源
 export const financeSource = [

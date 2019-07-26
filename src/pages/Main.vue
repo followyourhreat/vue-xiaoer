@@ -3,7 +3,7 @@
     <dt-slideMenu/>
     <div class="main-header">
       <div class="main-left"></div>
-      <div class="main-title">酷蛙净水智能平台</div>
+      <div class="main-title">利众生活云管理平台</div>
       <div class="main-right" style="top: 10px">
         <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg"/>
         <Poptip trigger="click" placement="bottom-end" width="100px">
@@ -18,9 +18,9 @@
       </div>
     </div>
     <div class="main-body">
-      <transition name="singlePage">
+      <!-- <transition name="singlePage"> -->
         <router-view></router-view>
-      </transition>
+      <!-- </transition> -->
     </div>
   </div>
 </template>
@@ -35,13 +35,16 @@ export default {
   computed: {
     ...mapGetters(["userInfo"])
   },
-  mounted() {},
+  mounted() {
+    
+  },
   methods: {
     handleLogout() {
-      this.$post("admin/logout", {}).then(res => {
-        this.$router.push({ name: "login" });
-        console.log("---退出登录---");
-      });
+      this.$router.push({ name: "login" });
+      // this.$post("admin/logout", {}).then(res => {
+      //   this.$router.push({ name: "login" });
+      //   console.log("---退出登录---");
+      // });
     }
   }
 };

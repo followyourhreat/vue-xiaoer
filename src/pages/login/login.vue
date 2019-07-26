@@ -1,9 +1,9 @@
 <template>
   <div class="login">
-    <div class="login-main" @keyup.enter="handleLogin">
+    <div class="login-main">
       <div class="logo">
-        <span>酷蛙小二</span>
-        <span>净水运营管理平台</span>
+        <span></span>
+        <span>利众生活云管理平台</span>
       </div>
       <Form class="loginForm" ref="form" :model="formData" :rules="rules" :label-width="0">
         <FormItem label prop="username">
@@ -32,12 +32,21 @@
             </span>
           </Input>
         </FormItem>
-        <FormItem label prop="remember">
+
+        <!-- <FormItem label="" prop="verifyCode">
+          <div class="code">
+            <Input v-model.trim="formData.verifyCode" placeholder="请输入验证码" :maxlength="6" style="width:220px;">
+              <span slot="prepend">验证码：</span>
+            </Input>
+            <Button type="primary"  >1324</Button>
+          </div>
+        </FormItem>-->
+        <!-- <FormItem label prop="remember">
           <div class="remember">
             <Checkbox v-model="remember">记住密码</Checkbox>
             <div style="cursor: pointer" @click="handleRouter('forget')">忘记密码</div>
           </div>
-        </FormItem>
+        </FormItem>-->
         <FormItem label>
           <Button type="primary" long @click="handleLogin">登录</Button>
         </FormItem>
@@ -55,6 +64,7 @@ export default {
       formData: {
         username: "",
         password: ""
+        // verifyCode:""
       },
       rules: {}
     };
@@ -62,9 +72,11 @@ export default {
   mounted() {
     this.remember = localStorage.getItem("remember") == "true" ? true : false;
     if (this.remember) {
+      console.log("123123");
       this.formData.username = localStorage.getItem("username");
       this.formData.password = localStorage.getItem("password");
     }
+    console.log("2222");
   },
   methods: {
     handleEye() {
@@ -75,21 +87,13 @@ export default {
       localStorage.setItem("remember", this.remember ? "true" : "false");
       localStorage.setItem("username", this.formData.username);
       localStorage.setItem("password", this.formData.password);
-      this.$post("admin/login", this.formData).then(res => {
+      console.log("123");
+      console.log(this);
+      this.$http.post("/login", this.formData).then(res => {
+        console.log(res);
+        this.$Message.success("登录成功");
         this.$store.dispatch("setUserInfoAction", res.data);
-        this.$post("menu/usermenu", {}).then(res2 => {
-          res2.data.forEach(item => {
-            if (item.child) {
-              var checked = item.child.some(item2 => {
-                return item2.checked;
-              });
-              item.checked = checked ? 1 : 0;
-            }
-          });
-          this.$store.dispatch("setMenuInfoAction", res2.data);
-          localStorage.setItem("menuName", "device-list");
-          this.$router.push({ name: "device-list" });
-        });
+        this.$router.push({ name: "index-list" });
       });
     }
   }
@@ -140,6 +144,16 @@ export default {
       align-items: center;
       justify-content: space-between;
     }
+  }
+}
+.code {
+  .ivu-input-group {
+    float: left;
+  }
+  button {
+    position: relative;
+    float: right;
+    width: 60px;
   }
 }
 </style>

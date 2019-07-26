@@ -50,196 +50,178 @@ export const pagesRouter = [
   //   ]
   // },
   {
-    path: '/device',
-    name: 'device',
+    path: '/index',
+    name: 'index',
     icon: 'shangpin',
-    title: '设备管理',
-    toName: 'device-list',
+    title: '首页',
+    toName: 'index-list',
     component: Main,
     hasChildren: false,
     children: [{
       path: 'list',
-      name: 'device-list',
-      title: '设备管理',
-      component: resolve => require(['../pages/1_device/list'], resolve)
+      name: 'index-list',
+      title: '首页',
+      component: resolve => require(['../pages/index/list'], resolve)
     }]
   },
   {
-    path: '/account',
-    name: 'account',
+    path: '/business',
+    name: 'business',
     icon: 'zhanghao',
-    title: '用户管理',
-    toName: 'account-list',
+    title: '交易管理',
+    toName: 'business-list',
     component: Main,
     hasChildren: true,
     children: [{
         path: 'list',
-        name: 'account-list',
-        title: '角色管理',
-        component: resolve => require(['../pages/2_account/list'], resolve)
+        name: 'business-list',
+        title: '交易记录查询',
+        component: resolve => require(['../pages/business/list'], resolve)
       },
       {
         path: 'list2',
-        name: 'account-list2',
-        title: '运营账号管理',
-        component: resolve => require(['../pages/2_account/list2'], resolve)
+        name: 'business-list2',
+        title: '订单记录查询',
+        component: resolve => require(['../pages/business/list2'], resolve)
       },
       {
         path: 'list3',
-        name: 'account-list3',
-        title: '运营商管理',
-        component: resolve => require(['../pages/2_account/list3'], resolve)
+        name: 'business-list3',
+        title: '提现交易查询',
+        component: resolve => require(['../pages/business/list3'], resolve)
       }
     ]
   },
+ 
   {
-    path: '/xiaoer',
-    name: 'xiaoer',
-    icon: 'xiaoer',
-    title: '小二管理',
-    toName: 'xiaoer-list',
-    component: Main,
-    hasChildren: false,
-    children: [{
-      path: 'list',
-      name: 'xiaoer-list',
-      title: '小二管理',
-      component: resolve => require(['../pages/3_xiaoer/list'], resolve)
-    }]
-  },
-  {
-    path: '/finance',
-    name: 'finance',
-    icon: 'caiwu',
-    title: '财务管理',
-    toName: 'finance-list',
-    component: Main,
-    hasChildren: true,
-    children: [{
-        path: 'list',
-        name: 'finance-list',
-        title: '分润明细',
-        component: resolve => require(['../pages/4_finance/list'], resolve)
-      },
-      {
-        path: 'list2',
-        name: 'finance-list2',
-        title: '提现管理',
-        component: resolve => require(['../pages/4_finance/list2'], resolve)
-      },
-    ]
-  },
-  {
-    path: '/flow',
-    name: 'flow',
+    path: '/mall',
+    name: 'mall',
     icon: 'liucheng',
-    title: '流程引擎',
-    toName: 'flow-list',
+    title: '商家管理',
+    toName: 'mall-list',
     component: Main,
     hasChildren: true,
     children: [{
         path: 'list',
-        name: 'flow-list',
-        title: '流程管理',
-        component: resolve => require(['../pages/5_flow/list'], resolve)
+        name: 'mall-list',
+        title: '商家列表',
+        component: resolve => require(['../pages/mall/list'], resolve)
       },
       {
         path: 'list2',
-        name: 'flow-list2',
-        title: '工单管理',
-        component: resolve => require(['../pages/5_flow/list2'], resolve)
+        name: 'mall-list2',
+        title: '商家迁移',
+        component: resolve => require(['../pages/mall/list2'], resolve)
       },
       {
         path: 'list3',
-        name: 'flow-list3',
-        title: '工单录入',
-        component: resolve => require(['../pages/5_flow/list3'], resolve)
-      }
-    ]
-  },
-  {
-    path: '/shop',
-    name: 'shop',
-    icon: 'jinxiaocun',
-    title: '进销存管理',
-    toName: 'shop-list',
-    component: Main,
-    hasChildren: true,
-    children: [{
-        path: 'list',
-        name: 'shop-list',
-        title: '货物管理',
-        component: resolve => require(['../pages/6_shop/list'], resolve)
+        name: 'mall-list3',
+        title: '批量生成商家二维码',
+        component: resolve => require(['../pages/mall/list3'], resolve)
+      },
+      
+      {
+        path: 'detail',
+        name: 'detail',
+        title: '商家详情',
+        component: resolve => require(['../pages/mall/detail'], resolve)
       },
       {
-        path: 'list2',
-        name: 'shop-list2',
-        title: '代理商库存',
-        component: resolve => require(['../pages/6_shop/list2'], resolve)
+        path: 'list4',
+        name: 'mall-list4',
+        title: '商家绑定',
+        component: resolve => require(['../pages/mall/list4'], resolve)
       },
     ]
-  },
-  {
-    path: '/message',
-    name: 'message',
-    icon: 'message',
-    title: '消息管理',
-    toName: 'message-list',
-    component: Main,
-    hasChildren: false,
-    children: [{
-      path: 'list',
-      name: 'message-list',
-      title: '消息管理',
-      component: resolve => require(['../pages/7_message/list'], resolve)
-    }]
   },
   {
     path: '/system',
     name: 'system',
-    icon: 'xitong',
+    icon: 'jinxiaocun',
     title: '系统管理',
     toName: 'system-list',
     component: Main,
     hasChildren: true,
     children: [{
-        path: 'list',
-        name: 'system-list',
-        title: '库存操作日志',
-        component: resolve => require(['../pages/8_system/1_stock'], resolve)
-      },
-      {
-        path: 'account_log',
-        name: 'account_log',
-        title: '人员登录日志',
-        component: resolve => require(['../pages/8_system/account_log'], resolve)
-      },
-      {
-        path: 'allocate_log',
-        name: 'allocate_log',
-        title: '账号分配日志',
-        component: resolve => require(['../pages/8_system/allocate_log'], resolve)
-      },
-      {
-        path: 'password',
-        name: 'password',
-        title: '修改密码',
-        component: resolve => require(['../pages/8_system/password'], resolve)
-      },
-      {
-        path: 'sanction',
-        name: 'sanction',
-        title: '奖罚设置',
-        component: resolve => require(['../pages/8_system/sanction'], resolve)
-      },
-      {
-        path: 'setting',
-        name: 'setting',
-        title: 'APP设置',
-        component: resolve => require(['../pages/8_system/setting'], resolve)
-      }
-    ]
+      path: 'list',
+      name: 'system-list',
+      title: '角色管理',
+      component: resolve => require(['../pages/system/list'], resolve)
+    },
+    {
+      path: 'list2',
+      name: 'system-list2',
+      title: '组织机构管理',
+      component: resolve => require(['../pages/system/list2'], resolve)
+    },
+    {
+      path: 'list3',
+      name: 'system-list3',
+      title: '用户管理',
+      component: resolve => require(['../pages/system/list3'], resolve)
+    }]
   },
+
+  // {
+  //   path: '/finance',
+  //   name: 'finance',
+  //   icon: 'caiwu',
+  //   title: '财务管理',
+  //   toName: 'finance-list',
+  //   component: Main,
+  //   hasChildren: true,
+  //   children: [{
+  //       path: 'list',
+  //       name: 'finance-list',
+  //       title: '分润明细',
+  //       component: resolve => require(['../pages/4_finance/list'], resolve)
+  //     },
+  //     {
+  //       path: 'list2',
+  //       name: 'finance-list2',
+  //       title: '提现管理',
+  //       component: resolve => require(['../pages/4_finance/list2'], resolve)
+  //     },
+  //   ]
+  // },
+  // {
+  //   path: '/shop',
+  //   name: 'shop',
+  //   icon: 'jinxiaocun',
+  //   title: '进销存管理',
+  //   toName: 'shop-list',
+  //   component: Main,
+  //   hasChildren: true,
+  //   children: [{
+  //       path: 'list',
+  //       name: 'shop-list',
+  //       title: '货物管理',
+  //       component: resolve => require(['../pages/6_shop/list'], resolve)
+  //     },
+  //     {
+  //       path: 'list2',
+  //       name: 'shop-list2',
+  //       title: '代理商库存',
+  //       component: resolve => require(['../pages/6_shop/list2'], resolve)
+  //     },
+  //   ]
+  // },
+  // {
+  //   path: '/message',
+  //   name: 'message',
+  //   icon: 'message',
+  //   title: '消息管理',
+  //   toName: 'message-list',
+  //   component: Main,
+  //   hasChildren: false,
+  //   children: [{
+  //     path: 'list',
+  //     name: 'message-list',
+  //     title: '消息管理',
+  //     component: resolve => require(['../pages/7_message/list'], resolve)
+  //   }]
+  // },
+  
 ];
 
 /*

@@ -3,8 +3,8 @@
 */
 export default{
   state: {
-    userInfo: localStorage.getItem("userInfo")?JSON.parse(localStorage.getItem("userInfo")):{real_name: '管理员'},
-    menuInfo: localStorage.getItem("menuInfo")?JSON.parse(localStorage.getItem("menuInfo")):[]
+    userInfo: localStorage.getItem("userInfo")?(localStorage.getItem("userInfo")):{real_name: '管理员'},
+    menuInfo: localStorage.getItem("menuInfo")?(localStorage.getItem("menuInfo")):[]
   },
   actions: {
     setUserInfoAction({ commit }, data) {

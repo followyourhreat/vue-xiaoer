@@ -8,7 +8,7 @@ import qs from 'qs'
 // 模拟后台接口数据,若不需要,请注释
 // import './mock.js'
 // 基础URL
-const baseUrl = process.env.NODE_ENV == "production" ? "/index.php/admin" : "http://120.24.55.58:8146/index.php/admin";
+const baseUrl = process.env.NODE_ENV == "production" ? "http://www.lizsh.net/bgApi/" : "http://www.lizsh.net/bgApi/";
 var http = axios.create({
   baseURL: baseUrl,
   headers: {
@@ -53,18 +53,19 @@ var http = axios.create({
       });
     }
     // 接口出错
-    if (data.errcode != 0) {
-      Message.destroy()
-      Message.warning({
-        content: data.errmsg
-      });
-    }
-    // 接口出错
-    if (data.errcode == '40000') {
-      window.location.href = '/'
-    }
+    // if (data.errcode != 0) {
+    //   Message.destroy()
+    //   Message.warning({
+    //     content: data.errmsg
+    //   });
+    // }
+    // // 接口出错
+    // if (data.errcode == '40000') {
+    //   window.location.href = '/'
+    // }
     return data;
   }, function(err) {
+    console.log("回调失败")
     Notice.error({
       title: '回调失败',
       desc: err
@@ -81,7 +82,6 @@ var http = axios.create({
       http.post(url, params).then(response => {
         if (response.errcode == '0') {
           if (/add/.test(url) || /edit/.test(url)) {
-
             Message.success('操作成功')
           }
           resolve(response)

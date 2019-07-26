@@ -1,4 +1,4 @@
-<template>
+
   <template>
     <div class="avatar">
       <div @mouseover="showBg=true" @mouseleave="showBg=false">
@@ -13,7 +13,7 @@
           accept="image/gif, image/jpeg, image/jpg, image/png"
         >
         <img
-          :src="avatar?avatar:require('../assets/images/home.png')"
+          :src="avatar?avatar:require('/static/home.png')"
           alt
           :style="`width:${imgWidth};height: ${imgHeight};`"
           name="avatar"
@@ -22,10 +22,10 @@
       <div class="text" @click="upload" v-if="file">确定上传</div>
     </div>
   </template>
-</template>
 
 
-</template>
+
+
 <script>
 export default {
   name: "upload",

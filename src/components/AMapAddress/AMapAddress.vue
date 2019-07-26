@@ -1,7 +1,10 @@
 <template>
   <div class="pickerContent">
     <Row>
-      <Col :span="24">
+      <Col :span="2">
+        查询地址：
+      </Col>
+      <Col :span="10">
         <input v-model="value" type="text" ref="search" id="search" class="ivu-input" placeholder="请输入详细地址"/>
       </Col>
     </Row>
@@ -29,6 +32,7 @@
     },
     mounted() {
       this.loadMap();
+     
     },
     methods: {
       // 加载地图

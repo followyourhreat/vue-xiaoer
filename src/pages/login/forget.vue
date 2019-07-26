@@ -106,7 +106,7 @@
     top: 0px;
     bottom: 0px;
     right: 0px;
-    background: url('../../assets/bg.png')  center center no-repeat;
+    background: url('/static/bg.png')  center center no-repeat;
     background-size: cover;
     .login-main{
       background-color: #ffffff;

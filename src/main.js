@@ -14,9 +14,13 @@ import './extend' //扩展方法
 import './filter' //自定义过滤器
 import './mixin' //mixin
 import './plugin' //第三方插件
+
+import Vant from 'vant';
+import 'vant/lib/index.css';
 import i18n from './plugin/vue-i18n' //多语言
 import './style/index.less' //样式
 import './util' //公共方法
+Vue.use(Vant);
 Vue.use(iview)
 Vue.config.productionTip = false
 Vue.prototype.$Message.config({
